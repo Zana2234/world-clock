@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  // Italy
+  let italyElement = document.querySelector("#italy");
+  if (italyElement) {
+    let italyDateElement = italyElement.querySelector(".date");
+    let italyTimeElement = italyElement.querySelector(".time");
+    let italyTime = moment().tz("Europe/Rome");
+
+    italyDateElement.innerHTML = italyTime.format("MMMM	Do YYYY");
+    italyTimeElement.innerHTML = italyTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -44,6 +57,7 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
+  <a href="index.html">All cities</a>
   `;
 }
 
